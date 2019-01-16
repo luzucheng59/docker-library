@@ -18,14 +18,11 @@ RUN apk --update add --no-cache gcc g++ make \
     binutils \
     cyrus-sasl-dev \
     freetype-dev \
-    git \
     icu-dev \
     libc-dev \
     icu-dev \
     libpcre32 \
     libbz2 \
-    # libxml2 \
-    # libxml2-utils \
     \
     imagemagick-dev \
     libjpeg-turbo-dev \
@@ -50,8 +47,6 @@ RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-di
     && docker-php-ext-install sysvmsg \
     && docker-php-ext-install sysvsem \
     && docker-php-ext-install sysvshm \
-    # xmlrpc install fail
-    # && docker-php-ext-install xmlrpc \
     \
     # install pecl state version extensions
     # search from https://pecl.php.net/package-search.php
@@ -63,10 +58,6 @@ RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-di
 	# install redis
     && pecl install redis 4.2.0 \
     && docker-php-ext-enable redis \
-    \
-    # install mcrypt fail
-    # && pecl install mcrypt 1.0.2 \
-    # && docker-php-ext-enable mcrypt \
     \
     # install imagick
     && pecl install imagick 3.4.3 \
