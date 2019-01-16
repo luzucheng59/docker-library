@@ -12,29 +12,29 @@ LABEL maintainer="765131678@qq.com" \
 # searche by https://pkgs.alpinelinux.org/packages
 # alpine not include gcc g++ make
 RUN apk --update add --no-cache gcc g++ make \
-	autoconf \
-	bzip2 \
-	bzip2-dev \
-	binutils \
-	cyrus-sasl-dev \
-	freetype-dev \
-	git \
-	icu-dev \
-	libc-dev \
-	icu-dev \
-	libpcre32 \
-	libbz2 \
-	# libxml2 \
-	# libxml2-utils \
-	\
-	imagemagick-dev \
-	libjpeg-turbo-dev \
-	libpng-dev \
-	libmcrypt-dev \
-	libmemcached-dev \
-	openldap-dev \
-	rabbitmq-c \
-	rabbitmq-c-dev
+    autoconf \
+    bzip2 \
+    bzip2-dev \
+    binutils \
+    cyrus-sasl-dev \
+    freetype-dev \
+    git \
+    icu-dev \
+    libc-dev \
+    icu-dev \
+    libpcre32 \
+    libbz2 \
+    # libxml2 \
+    # libxml2-utils \
+    \
+    imagemagick-dev \
+    libjpeg-turbo-dev \
+    libpng-dev \
+    libmcrypt-dev \
+    libmemcached-dev \
+    openldap-dev \
+    rabbitmq-c \
+    rabbitmq-c-dev
 
 # install core extensions
 RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
