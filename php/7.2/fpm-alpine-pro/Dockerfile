@@ -5,8 +5,8 @@
 FROM php:7.2.14-fpm-alpine3.8
 
 LABEL maintainer="765131678@qq.com" \
-	version="1.0" \
-	description="基于alpine php7.2镜像扩展"
+    version="1.0" \
+    description="基于alpine php7.2镜像扩展"
 
 # install base rely on
 # searche by https://pkgs.alpinelinux.org/packages
@@ -38,25 +38,25 @@ RUN apk --update add --no-cache gcc g++ make \
 
 # install core extensions
 RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
-	&& docker-php-ext-install gd \
-	&& docker-php-ext-install mysqli \
+    && docker-php-ext-install gd \
+    && docker-php-ext-install mysqli \
     && docker-php-ext-install bz2 \
     && docker-php-ext-install zip \
     && docker-php-ext-install pdo_mysql \
     && docker-php-ext-install opcache \
-	&& docker-php-ext-install ldap \
-	&& docker-php-ext-install sockets \
-	&& docker-php-ext-install bcmath \
-	&& docker-php-ext-install sysvmsg \
-	&& docker-php-ext-install sysvsem \
-	&& docker-php-ext-install sysvshm \
-	# xmlrpc install fail
-	# && docker-php-ext-install xmlrpc \
-	\
-	# install pecl state version extensions
-	# can searche from https://pecl.php.net/package-search.php
-	\
-	# install memcached
+    && docker-php-ext-install ldap \
+    && docker-php-ext-install sockets \
+    && docker-php-ext-install bcmath \
+    && docker-php-ext-install sysvmsg \
+    && docker-php-ext-install sysvsem \
+    && docker-php-ext-install sysvshm \
+    # xmlrpc install fail
+    # && docker-php-ext-install xmlrpc \
+    \
+    # install pecl state version extensions
+    # can searche from https://pecl.php.net/package-search.php
+    \
+    # install memcached
     && pecl install memcached 3.1.3 \
     && docker-php-ext-enable memcached \
     \
@@ -82,7 +82,7 @@ RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-di
     \
     && pecl update-channels \
     && rm -rf /var/cache/apk/* \
-	&& rm -rf /tmp/pear
+    && rm -rf /tmp/pear
 
 ENTRYPOINT ["docker-php-entrypoint"]
 
