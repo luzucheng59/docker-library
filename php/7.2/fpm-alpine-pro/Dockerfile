@@ -9,7 +9,7 @@ LABEL maintainer="765131678@qq.com" \
     description="基于alpine php7.2镜像扩展"
 
 # install base rely on
-# searche by https://pkgs.alpinelinux.org/packages
+# search by https://pkgs.alpinelinux.org/packages
 # alpine not include gcc g++ make
 RUN apk --update add --no-cache gcc g++ make \
     autoconf \
@@ -54,7 +54,7 @@ RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-di
     # && docker-php-ext-install xmlrpc \
     \
     # install pecl state version extensions
-    # can searche from https://pecl.php.net/package-search.php
+    # search from https://pecl.php.net/package-search.php
     \
     # install memcached
     && pecl install memcached 3.1.3 \
