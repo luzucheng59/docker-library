@@ -1,5 +1,5 @@
 #
-# 基于 alpine php7.2基础镜像
+# create extensions and config
 #
 
 FROM php:7.2.14-fpm-alpine3.8
@@ -74,6 +74,44 @@ RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-di
     && pecl update-channels \
     && rm -rf /var/cache/apk/* \
     && rm -rf /tmp/pear
+
+#
+# build image
+# new image
+#
+FROM php:7.2.14-fpm-alpine3.8
+
+LABEL maintainer="765131678@qq.com" \
+    version="1.0" \
+    description="基于alpine php7.2镜像扩展"
+
+RUN apk --update add --no-cache \
+    bzip2 \
+    bzip2-dev \
+    binutils \
+    cyrus-sasl-dev \
+    freetype-dev \
+    icu-dev \
+    libc-dev \
+    icu-dev \
+    libpcre32 \
+    libbz2 \
+    \
+    imagemagick-dev \
+    libjpeg-turbo-dev \
+    libpng-dev \
+    libmcrypt-dev \
+    libmemcached-dev \
+    openldap-dev \
+    rabbitmq-c \
+    rabbitmq-c-dev \
+    && rm -rf /var/cache/apk/* \
+    && rm -rf /tmp/pear
+
+COPY --from=0 /usr/local/lib/php/extensions/no-debug-non-zts-20170718/* /usr/local/lib/php/extensions/no-debug-non-zts-20170718/
+
+COPY --from=0 /usr/local/etc/php/conf.d/* /usr/local/etc/php/conf.d/
+###
 
 ENTRYPOINT ["docker-php-entrypoint"]
 
