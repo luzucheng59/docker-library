@@ -5,8 +5,7 @@
 FROM php:7.2.14-fpm-alpine3.8
 
 LABEL maintainer="luzucheng59@163.com" \
-    version="2.0" \
-    description="基于alpine php7.2镜像扩展"
+    version="2.0"
 
 # install base rely on
 # search by https://pkgs.alpinelinux.org/packages
@@ -83,8 +82,7 @@ RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-di
 FROM php:7.2.14-fpm-alpine3.8
 
 LABEL maintainer="luzucheng59@163.com" \
-    version="2.0" \
-    description="基于alpine php7.2镜像扩展"
+    version="2.0"
 
 RUN apk --update add --no-cache \
     bzip2 \
