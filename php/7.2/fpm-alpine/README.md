@@ -5,6 +5,7 @@ Registry:
 ```
 docker pull registry.cn-hangzhou.aliyuncs.com/azu/php7.2-fpm-alpine
 ```
+> 镜像大小：68 M
 
 更新记录
 ==============================
@@ -12,7 +13,6 @@ docker pull registry.cn-hangzhou.aliyuncs.com/azu/php7.2-fpm-alpine
 ------------------------------
 ### 空间
 - 优化配置，缩减镜像大小
-> 镜像大小：压缩前：小于200M；压缩后：68M
 
 2019-01-15
 ------------------------------
@@ -36,5 +36,3 @@ docker pull registry.cn-hangzhou.aliyuncs.com/azu/php7.2-fpm-alpine
 - imagick 3.4.3
 - swoole 4.2.12
 - amqp 1.9.4
-
-> 镜像大小：300M+
