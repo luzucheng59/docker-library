@@ -1,5 +1,5 @@
 # docker-library
-常用docker镜像文件整理
+常用docker镜像，可用于学习和生产
 
 #### nginx-1.14 Registry:
 ```
