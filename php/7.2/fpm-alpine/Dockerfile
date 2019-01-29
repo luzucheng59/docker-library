@@ -5,7 +5,7 @@
 FROM php:7.2.14-fpm-alpine3.8
 
 LABEL maintainer="luzucheng59@163.com" \
-    version="2.0"
+    version="2.1"
 
 # install base rely on
 # search by https://pkgs.alpinelinux.org/packages
@@ -82,7 +82,7 @@ RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-di
 FROM php:7.2.14-fpm-alpine3.8
 
 LABEL maintainer="luzucheng59@163.com" \
-    version="2.0"
+    version="2.1"
 
 RUN apk --update add --no-cache \
     bzip2 \
@@ -108,8 +108,9 @@ RUN apk --update add --no-cache \
     && rm -rf /tmp/pear
 
 COPY --from=0 /usr/local/lib/php/extensions/no-debug-non-zts-20170718/* /usr/local/lib/php/extensions/no-debug-non-zts-20170718/
-
 COPY --from=0 /usr/local/etc/php/conf.d/* /usr/local/etc/php/conf.d/
+
+COPY conf/php.ini /usr/local/etc/php/
 
 ENTRYPOINT ["docker-php-entrypoint"]
 
