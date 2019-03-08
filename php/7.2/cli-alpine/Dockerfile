@@ -64,7 +64,7 @@ RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-di
     && pecl install swoole 4.2.12 \
     && docker-php-ext-enable swoole \
     \
-    # install event 确保在 sockets 后加载
+    # install event after sockets
     && pecl install event 2.4.3 \
     && docker-php-ext-enable event \
     && mv /usr/local/etc/php/conf.d/docker-php-ext-event.ini /usr/local/etc/php/conf.d/docker-php-ext-zz-event.ini \
