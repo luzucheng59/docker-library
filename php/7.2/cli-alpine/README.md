@@ -3,7 +3,7 @@
 
 Registry:
 ```
-docker pull luzucheng/php7.2.15-cli-alpine-ext:1.2
+docker pull luzucheng/php7.2.15-cli-alpine-ext:1.3
 ```
 > 镜像大小(压缩后)：68 M
 
