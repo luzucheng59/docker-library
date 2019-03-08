@@ -1,13 +1,20 @@
 # php7.2.15-fpm-alpine
-基于docker官方 php:7.2.15-fpm-alpine 构建的镜像。
+基于docker官方 php:7.2.15-fpm-alpine 构建的镜像, 新增常用扩展，满足日常开发需求。
 
 Registry:
 ```
-docker pull luzucheng/php7.2.15-fpm-alpine-ext
+docker pull luzucheng/php7.2.15-fpm-alpine-ext:1.2
 ```
 > 镜像大小(压缩后)：68 M
 
 更新记录
+==============================
+2019-03-08
+------------------------------
+### 新增扩展
+- pcntl
+- event 2.4.3
+
 ==============================
 2019-01-29
 ------------------------------
@@ -34,9 +41,11 @@ docker pull luzucheng/php7.2.15-fpm-alpine-ext
 - sysvmsg
 - sysvsem
 - sysvshm
+- pcntl
 
 ### 新增pecl扩展
 - memcached 3.1.3
 - redis 4.2.0
 - imagick 3.4.3
 - swoole 4.2.12
+- event 2.4.3
