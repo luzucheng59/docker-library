@@ -15,7 +15,6 @@ docker pull luzucheng/php7.2.15-cli-alpine-ext:latest
 - pcntl
 - event 2.4.3
 
-==============================
 2019-01-29
 ------------------------------
 ### 空间
