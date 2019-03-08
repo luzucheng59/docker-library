@@ -1,9 +1,9 @@
-# php7.2.15-fpm-alpine
-基于docker官方 php:7.2.15-fpm-alpine 构建的镜像。
+# php7.2.15-cli-alpine
+基于docker官方 php:7.2.15-cli-alpine 构建的镜像。
 
 Registry:
 ```
-docker pull luzucheng/php7.2.15-fpm-alpine-ext
+docker pull luzucheng/php7.2.15-cli-alpine-ext:1.1
 ```
 > 镜像大小(压缩后)：68 M
 

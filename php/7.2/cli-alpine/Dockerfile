@@ -1,7 +1,7 @@
 #
 # create extensions and config
 #
-FROM php:7.2.15-fpm-alpine
+FROM php:7.2.15-cli-alpine
 
 # install base rely on
 # search by https://pkgs.alpinelinux.org/packages
@@ -70,7 +70,7 @@ RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-di
 # build image
 # new image
 #
-FROM php:7.2.15-fpm-alpine
+FROM php:7.2.15-cli-alpine
 
 RUN apk --update add --no-cache \
     bzip2 \
@@ -89,7 +89,6 @@ RUN apk --update add --no-cache \
     libpng-dev \
     libmcrypt-dev \
     libmemcached-dev \
-
     openldap-dev \
     rabbitmq-c \
     rabbitmq-c-dev \
@@ -107,6 +106,4 @@ COPY conf/php.ini /usr/local/etc/php/
 
 ENTRYPOINT ["docker-php-entrypoint"]
 
-EXPOSE 9000
-
-CMD ["php-fpm"]
+CMD ["php", "-a"]
